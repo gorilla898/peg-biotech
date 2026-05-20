@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>吉林省派格生物科技有限公司</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:  #0d2a4e;
+      --blue-mid:   #1a5fa8;
+      --blue-light: #3a8fdf;
+      --teal:       #0e8a7c;
+      --teal-light: #e0f4f1;
+      --gray-bg:    #f5f7fa;
+      --gray-line:  #e4e8ef;
+      --text-main:  #1a2030;
+      --text-muted: #6b7485;
+      --white:      #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 42, 78, 0.97);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6vw;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo .icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo .icon svg { width: 20px; height: 20px; fill: white; }
+    .nav-logo span {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--blue-dark) 0%, #0a3d62 40%, #0b5a6b 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; max-width: 700px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(58, 143, 223, 0.2);
+      border: 1px solid rgba(58, 143, 223, 0.4);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      color: #7dc8ff;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: #7dc8ff;
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #7dc8ff, #5de8d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.72);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
+      color: white;
+      padding: 13px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 13px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: white; color: white; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 88px 6vw; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--gray-bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--gray-line);
+    }
+    .stat-card .num {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--blue-mid);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-card .lbl {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .about-text h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .about-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .tag {
+      background: var(--teal-light);
+      color: var(--teal);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: white; }
+    .services-intro { margin-bottom: 52px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      border: 1px solid var(--gray-line);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover {
+      box-shadow: 0 10px 40px rgba(26, 95, 168, 0.1);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    .service-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── PRODUCTS ── */
+    #products { background: var(--gray-bg); }
+    .products-intro { margin-bottom: 52px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-line);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .product-card:hover {
+      box-shadow: 0 12px 48px rgba(14, 138, 124, 0.12);
+      transform: translateY(-4px);
+    }
+    .product-header {
+      padding: 36px 32px 28px;
+      position: relative;
+    }
+    .product-header.ha {
+      background: linear-gradient(135deg, #0a3d62 0%, #0e6d8a 100%);
+    }
+    .product-header.peg {
+      background: linear-gradient(135deg, #0b4f3a 0%, #0e8a7c 100%);
+    }
+    .product-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.9);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .product-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .product-header p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+    .product-body { padding: 28px 32px 32px; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .feature-list li::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .product-footer {
+      padding: 16px 32px;
+      border-top: 1px solid var(--gray-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-footer span { font-size: 13px; color: var(--text-muted); }
+    .link-more {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .link-more:hover { color: var(--blue-mid); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(150deg, var(--blue-dark), #083048);
+      color: white;
+    }
+    #contact .section-label { color: #7dc8ff; }
+    #contact .section-title { color: white; }
+    #contact .section-desc { color: rgba(255,255,255,0.65); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 52px;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-item .ico {
+      width: 44px; height: 44px;
+      background: rgba(58, 143, 223, 0.18);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-item .info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+    .contact-item .info p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: white;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,0.35); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: rgba(58,143,223,0.6); }
+    .contact-form textarea { min-height: 100px; }
+    .contact-form button {
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 13px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .contact-form button:hover { opacity: 0.88; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07192e;
+      padding: 32px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    footer a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    footer a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-grid,
+      .contact-grid,
+      .products-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      </svg>
+    </div>
+    <span>派格生物科技</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">公司简介</a></li>
+    <li><a href="#services">业务领域</a></li>
+    <li><a href="#products">核心产品</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">吉林省派格生物科技有限公司</div>
+    <h1>专注生物材料<br><span>创新与应用</span></h1>
+    <p>深耕透明质酸衍生物与聚乙二醇衍生物领域，提供技术开发、测试服务及进出口贸易一体化解决方案。</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#products">了解产品</a>
+      <a class="btn-outline" href="#contact">联系我们</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">关于我们</p>
+  <h2 class="section-title">吉林省派格生物科技有限公司</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3>专业的生物科技企业</h3>
+      <p>吉林省派格生物科技有限公司是一家专注于生物材料研发与应用的科技企业，致力于为医药、医疗器械、化妆品等行业提供高品质的功能性生物材料。</p>
+      <p>公司以透明质酸衍生物和聚乙二醇衍生物为核心产品，依托先进的技术平台，持续推动生物材料的创新突破，并提供专业的技术开发与测试服务。</p>
+      <p>凭借丰富的技术积累和完善的服务体系，公司与国内外多家知名企业建立了长期稳定的合作关系。</p>
+      <div class="about-tags">
+        <span class="tag">透明质酸衍生物</span>
+        <span class="tag">聚乙二醇衍生物</span>
+        <span class="tag">技术开发</span>
+        <span class="tag">测试服务</span>
+        <span class="tag">进出口贸易</span>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="num">2+</div>
+        <div class="lbl">核心产品系列</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">4</div>
+        <div class="lbl">主要业务板块</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">专业</div>
+        <div class="lbl">技术研发团队</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">全球</div>
+        <div class="lbl">贸易覆盖范围</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-intro">
+    <p class="section-label">业务领域</p>
+    <h2 class="section-title">四大核心业务</h2>
+    <p class="section-desc">围绕生物科技领域，为国内外客户提供全链条的专业服务与贸易支持。</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon" style="background:#e8f0fc;">🔬</div>
+      <h3>技术开发</h3>
+      <p>提供透明质酸衍生物、聚乙二醇衍生物等生物材料的定制化技术开发服务，满足客户在医药、医疗器械等领域的个性化需求。</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#e0f4f1;">⚙️</div>
+      <h3>技术服务</h3>
+      <p>为客户提供生物材料应用的技术咨询、工艺优化及全程技术支持，确保产品在各应用场景中达到最佳性能。</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#fff3e0;">🧪</div>
+      <h3>测试服务</h3>
+      <p>依托专业的检测平台，为生物材料产品提供理化性质、生物相容性等多维度专业测试，出具权威测试报告。</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#fce8f0;">🌐</div>
+      <h3>进出口贸易</h3>
+      <p>具备技术及货物进出口资质，连接国内外优质生物材料资源，为客户提供高效、合规的进出口贸易服务。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-intro">
+    <p class="section-label">核心产品</p>
+    <h2 class="section-title">两大核心产品系列</h2>
+    <p class="section-desc">深耕生物材料领域，以高纯度、高稳定性的产品赋能医药与大健康产业。</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-header ha">
+        <div class="product-tag">HA DERIVATIVES</div>
+        <h3>透明质酸衍生物</h3>
+        <p>以天然透明质酸为基础，经化学修饰改造，提升其机械强度、降解稳定性及功能化应用能力。</p>
+      </div>
+      <div class="product-body">
+        <ul class="feature-list">
+          <li>优异的生物相容性与生物可降解性</li>
+          <li>可调控的交联度与降解周期</li>
+          <li>适用于医疗填充、药物递送、组织工程等领域</li>
+          <li>多种分子量及修饰度规格可供选择</li>
+          <li>符合严格的质量控制标准</li>
+        </ul>
+      </div>
+      <div class="product-footer">
+        <span>定制规格 · 批量供应</span>
+        <a class="link-more" href="#contact">咨询详情 →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-header peg">
+        <div class="product-tag">PEG DERIVATIVES</div>
+        <h3>聚乙二醇衍生物</h3>
+        <p>基于聚乙二醇（PEG）骨架进行功能化修饰，广泛应用于生物医药及高端材料领域。</p>
+      </div>
+      <div class="product-body">
+        <ul class="feature-list">
+          <li>良好的水溶性与低免疫原性</li>
+          <li>丰富的端基功能化修饰选项（氨基、羧基、巯基等）</li>
+          <li>广泛用于蛋白/多肽PEG化、纳米药物载体、水凝胶</li>
+          <li>多分子量段（1K–40K）灵活选择</li>
+          <li>精细化纯度控制，保障批间一致性</li>
+        </ul>
+      </div>
+      <div class="product-footer">
+        <span>定制规格 · 批量供应</span>
+        <a class="link-more" href="#contact">咨询详情 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">联系我们</p>
+  <h2 class="section-title">期待与您合作</h2>
+  <p class="section-desc">无论是产品咨询、技术合作还是商务洽谈，欢迎随时与我们联系。</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="ico">📍</div>
+        <div class="info">
+          <h4>公司地址</h4>
+          <p>吉林省</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ico">🏢</div>
+        <div class="info">
+          <h4>公司名称</h4>
+          <p>吉林省派格生物科技有限公司</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ico">🌐</div>
+        <div class="info">
+          <h4>业务范围</h4>
+          <p>技术开发与服务<br>技术及货物进出口<br>测试服务</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ico">📦</div>
+        <div class="info">
+          <h4>核心产品</h4>
+          <p>透明质酸衍生物<br>聚乙二醇衍生物</p>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="您的姓名" required />
+      <input type="email" placeholder="您的邮箱" required />
+      <input type="text" placeholder="公司名称" />
+      <textarea placeholder="请描述您的需求或问题..."></textarea>
+      <button type="submit">发送询盘 ↗</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 吉林省派格生物科技有限公司 · 版权所有</p>
+  <p>专注生物材料创新 · 透明质酸衍生物 · 聚乙二醇衍生物</p>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '已发送，我们将尽快回复 ✓';
+    btn.style.background = 'linear-gradient(135deg, #0e8a7c, #0b6b5a)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '发送询盘 ↗';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  // Smooth nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.style.color = '');
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.style.color = 'white';
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
