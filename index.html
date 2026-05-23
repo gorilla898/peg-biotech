@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>吉林省派格生物科技有限公司</title>
+  <title>吉林省创力生物科技有限公司</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,7 +54,7 @@
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
     }
-    .nav-logo .icon svg { width: 20px; height: 20px; fill: white; }
+    .nav-logo .icon svg { width: 22px; height: 22px; fill: white; }
     .nav-logo span {
       color: white;
       font-size: 15px;
@@ -266,7 +266,7 @@
     .products-intro { margin-bottom: 52px; }
     .products-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
     }
     .product-card {
@@ -459,11 +459,21 @@
 <nav>
   <a class="nav-logo" href="#">
     <div class="icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3a8fdf;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0e8a7c;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="10" fill="url(#logoGrad)" />
+        <circle cx="24" cy="18" r="5" fill="white" opacity="0.95" />
+        <ellipse cx="24" cy="32" rx="10" ry="5" fill="none" stroke="white" stroke-width="2" opacity="0.9" />
+        <ellipse cx="24" cy="32" rx="6" ry="3" fill="none" stroke="white" stroke-width="1.5" opacity="0.7" />
+        <line x1="24" y1="23" x2="24" y2="27" stroke="white" stroke-width="2" opacity="0.9" />
       </svg>
     </div>
-    <span>派格生物科技</span>
+    <span>创力生物</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">公司简介</a></li>
@@ -476,9 +486,8 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-badge">吉林省派格生物科技有限公司</div>
+    <div class="hero-badge">吉林省创力生物科技有限公司</div>
     <h1>专注生物材料<br><span>创新与应用</span></h1>
-    <p>深耕透明质酸衍生物与聚乙二醇衍生物领域，提供技术开发、测试服务及进出口贸易一体化解决方案。</p>
     <div class="hero-btns">
       <a class="btn-primary" href="#products">了解产品</a>
       <a class="btn-outline" href="#contact">联系我们</a>
@@ -489,16 +498,18 @@
 <!-- ABOUT -->
 <section id="about">
   <p class="section-label">关于我们</p>
-  <h2 class="section-title">吉林省派格生物科技有限公司</h2>
+  <h2 class="section-title">吉林省创力生物科技有限公司</h2>
   <div class="about-grid">
     <div class="about-text">
       <h3>专业的生物科技企业</h3>
-      <p>吉林省派格生物科技有限公司是一家专注于生物材料研发与应用的科技企业，致力于为医药、医疗器械、化妆品等行业提供高品质的功能性生物材料。</p>
-      <p>公司以透明质酸衍生物和聚乙二醇衍生物为核心产品，依托先进的技术平台，持续推动生物材料的创新突破，并提供专业的技术开发与测试服务。</p>
+      <p>吉林省创力生物科技有限公司是一家专注于生物材料研发与应用的科技企业，致力于为医药、医疗器械、化妆品等行业提供高品质的功能性生物材料。</p>
+      <p>公司以透明质酸衍生物、聚乙二醇衍生物、聚氨基酸衍生物及胶原蛋白衍生物为核心产品，依托先进的技术平台，持续推动生物材料的创新突破，并提供专业的技术开发与测试服务。</p>
       <p>凭借丰富的技术积累和完善的服务体系，公司与国内外多家知名企业建立了长期稳定的合作关系。</p>
       <div class="about-tags">
         <span class="tag">透明质酸衍生物</span>
         <span class="tag">聚乙二醇衍生物</span>
+        <span class="tag">聚氨基酸衍生物</span>
+        <span class="tag">胶原蛋白衍生物</span>
         <span class="tag">技术开发</span>
         <span class="tag">测试服务</span>
         <span class="tag">进出口贸易</span>
@@ -506,7 +517,7 @@
     </div>
     <div class="about-stats">
       <div class="stat-card">
-        <div class="num">2+</div>
+        <div class="num">4+</div>
         <div class="lbl">核心产品系列</div>
       </div>
       <div class="stat-card">
@@ -536,7 +547,7 @@
     <div class="service-card">
       <div class="service-icon" style="background:#e8f0fc;">🔬</div>
       <h3>技术开发</h3>
-      <p>提供透明质酸衍生物、聚乙二醇衍生物等生物材料的定制化技术开发服务，满足客户在医药、医疗器械等领域的个性化需求。</p>
+      <p>提供透明质酸衍生物、聚乙二醇衍生物、聚氨基酸衍生物及胶原蛋白衍生物等生物材料的定制化技术开发服务，满足客户在医药、医疗器械等领域的个性化需求。</p>
     </div>
     <div class="service-card">
       <div class="service-icon" style="background:#e0f4f1;">⚙️</div>
@@ -560,7 +571,7 @@
 <section id="products">
   <div class="products-intro">
     <p class="section-label">核心产品</p>
-    <h2 class="section-title">两大核心产品系列</h2>
+    <h2 class="section-title">四大核心产品系列</h2>
     <p class="section-desc">深耕生物材料领域，以高纯度、高稳定性的产品赋能医药与大健康产业。</p>
   </div>
   <div class="products-grid">
@@ -605,6 +616,48 @@
         <a class="link-more" href="#contact">咨询详情 →</a>
       </div>
     </div>
+
+    <div class="product-card">
+      <div class="product-header" style="background: linear-gradient(135deg, #6b2c91 0%, #9b59b6 100%);">
+        <div class="product-tag">POLYAMINO ACID DERIVATIVES</div>
+        <h3>聚氨基酸衍生物</h3>
+        <p>基于天然氨基酸聚合骨架，兼具良好生物相容性与可设计的功能化特性，是新一代生物医用材料。</p>
+      </div>
+      <div class="product-body">
+        <ul class="feature-list">
+          <li>天然氨基酸来源，生物相容性优异</li>
+          <li>可降解为氨基酸单体，代谢产物安全无毒</li>
+          <li>侧链丰富可修饰，便于功能化改造</li>
+          <li>适用于药物载体、组织修复、生物胶黏剂等</li>
+          <li>分子量及聚合度可精确调控</li>
+        </ul>
+      </div>
+      <div class="product-footer">
+        <span>定制规格 · 批量供应</span>
+        <a class="link-more" href="#contact">咨询详情 →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-header" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+        <div class="product-tag">COLLAGEN DERIVATIVES</div>
+        <h3>胶原蛋白衍生物</h3>
+        <p>源自天然胶原蛋白，经提取纯化及功能化改性，广泛用于组织工程、医美及高端护肤领域。</p>
+      </div>
+      <div class="product-body">
+        <ul class="feature-list">
+          <li>天然ECM成分，细胞亲和性极佳</li>
+          <li>保留三螺旋结构，机械性能优异</li>
+          <li>可交联改性，调控降解速率与强度</li>
+          <li>广泛应用于创面敷料、组织支架、医美填充</li>
+          <li>来源可控，纯度与安全性严格把关</li>
+        </ul>
+      </div>
+      <div class="product-footer">
+        <span>定制规格 · 批量供应</span>
+        <a class="link-more" href="#contact">咨询详情 →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -619,14 +672,14 @@
         <div class="ico">📍</div>
         <div class="info">
           <h4>公司地址</h4>
-          <p>吉林省</p>
+          <p>长春市南关区西四道街12号金时代大厦507-511</p>
         </div>
       </div>
       <div class="contact-item">
         <div class="ico">🏢</div>
         <div class="info">
           <h4>公司名称</h4>
-          <p>吉林省派格生物科技有限公司</p>
+          <p>吉林省创力生物科技有限公司</p>
         </div>
       </div>
       <div class="contact-item">
@@ -640,7 +693,7 @@
         <div class="ico">📦</div>
         <div class="info">
           <h4>核心产品</h4>
-          <p>透明质酸衍生物<br>聚乙二醇衍生物</p>
+          <p>透明质酸衍生物<br>聚乙二醇衍生物<br>聚氨基酸衍生物<br>胶原蛋白衍生物</p>
         </div>
       </div>
     </div>
@@ -656,8 +709,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 吉林省派格生物科技有限公司 · 版权所有</p>
-  <p>专注生物材料创新 · 透明质酸衍生物 · 聚乙二醇衍生物</p>
+  <p>© 2026 吉林省创力生物科技有限公司 · 版权所有</p>
+  <p>专注生物材料创新 · 透明质酸衍生物 · 聚乙二醇衍生物 · 聚氨基酸衍生物 · 胶原蛋白衍生物</p>
 </footer>
 
 <script>
